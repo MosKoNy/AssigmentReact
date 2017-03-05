@@ -1,0 +1,180 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: xx-large;
+}
+
+.App-content {
+	margin: auto;
+	max-width:480px;
+}
+
+	.App-form input {
+		width: 80%;
+		padding: 12px 20px;
+		margin: 10px 10px;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		color:#033;
+		font-size:larger;
+	}
+	
+	.App-form button {
+		width: 20;
+		padding: 12px 20px;
+		margin: 10px 10px;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		color:#033;
+		font-size:larger;
+	}
+	
+.App-content  {
+	background-color:transparent;
+}
+
+.Filter a:link,a:visited{
+	color: #999;
+	background-color:#FFF;
+	border: 1px solid #999;
+	padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+	.Filter a:hover{
+		border: 1px solid ;
+		background-color: #999;
+		color: white;
+	}
+
+ul {
+	list-style-type: none;
+	margin: 10px 0px;
+	padding: 0;
+}
+
+li {
+	position: relative;
+	font-size: medium;
+	border-bottom: 1px solid #ededed;
+	text-align:left;
+}
+	li button {
+		float: right !important;
+		font-size:medium;
+		padding: 0px 15px;
+		height:25px;
+		margin: 0px 10px;
+		border:none;
+		background-color:transparent;
+		-webkit-transition: font-size 0.5s ease, background-color 0.5s ease;
+	  	-moz-transition: font-size 0.5s ease, background-color 0.5s ease;
+	  	-o-transition: font-size 0.5s ease, background-color 0.5s ease;
+	  	-ms-transition: font-size 0.5s ease, background-color 0.5s ease;
+	  	transition: font-size 0.5s ease, background-color 0.5s ease;
+	}
+	li button:hover {
+		border: 1px solid #ccc;
+		color:#FFF;
+		background-color:#D12323;
+		border:hidden;
+	}
+	
+	li:last-child {
+	  border: none;
+	}
+	
+	.line-through{
+		text-decoration: line-through;
+		color:#999;
+	}
+	
+	li a:link,a:visited {
+		color:#666;
+	}
+	
+	li a{
+	  text-decoration: none;
+	  color: #000;
+	  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+	  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+	  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+	  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+	  transition: font-size 0.3s ease, background-color 0.3s ease;
+	  display: block;
+	  width: 100%;
+	  padding:10px 0px;
+	}
+	
+	li a:hover {
+	  font-size:larger;
+	  background: #EBEBEB;
+	}
+	
+	li a:link {
+		color: #000;
+	}
+	
+	li input[type="checkbox"] {
+		content: "\2022";
+		color: #f3f3f3;
+		font-size: 30px;
+		text-align: center;
+		line-height: 18px;
+	}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 480px) {
+    .App-content {
+		max-width:480px;
+		min-width:100%;
+	}
+	.App-form input {
+	width: 80%;
+    padding: 12px 20px;
+    margin: 10px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	color:#033;
+}
+
+.App-form input {
+	padding: 12px 20px;
+	margin: 5px 0px;
+}
+
+.App-form button {
+    padding: 12px 20px;
+	margin: 5px 0px;
+}
+}

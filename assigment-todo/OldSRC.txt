@@ -1,0 +1,78 @@
+window.id = 0;
+const todoStore = JSON.parse(localStorage.getItem('todoAssigmentKobchai')) || [];
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      data: todoStore
+    }
+  }
+  addTodo(val){
+    var varAddTodo = {id: window.id++, text: val, date:new Date().toLocaleDateString()}
+	var AddA = this.state.data
+	AddA.push(varAddTodo);
+	localStorage.setItem('todoAssigmentKobchai', JSON.stringify(AddA));
+    this.state.data.push(varAddTodo);
+    this.setState({data: this.state.data});
+  }
+  handleRemove(id){
+    const remainder = this.state.data.filter((todo) => {
+      if(todo.id !== id) return todo;
+    });
+	localStorage.setItem('todoAssigmentKobchai', JSON.stringify(remainder));
+    this.setState({data: remainder});
+  }
+ 
+  render(){
+    return (
+      	<div className="App">
+        	<div className="App-header">
+          	<img src={logo} className="App-logo" alt="logo" />
+          	<h2>Welcome to React</h2>
+        	</div>
+        	<p className="App-intro">
+          		To - do
+        	</p>
+			<div className="App-content">
+				<TodoForm addTodo={this.addTodo.bind(this)}/>
+				<TodoList 
+					todos={this.state.data} 
+					remove={this.handleRemove.bind(this)}
+				/>
+				<hr />
+			</div>
+      	</div>
+    );
+  }
+}
+
+const TodoForm = ({addTodo}) => {
+	let input;
+	return (
+		<div className="App-form">
+		  <input placeholder='Enter Todo list . . .' ref={node => {
+			input = node;
+		  }} />
+		  <button onClick={() => {
+			addTodo(input.value);
+			input.value = '';
+		  }}>
+			+
+		  </button>
+		</div>
+  	);
+}
+
+const Todo = ({todo, remove}) => {
+  return (<li onDoubleClick ={() => remove(todo.id)}><a href="#"><input type="checkbox" /><button onClick={() => remove(todo.id)}> x </button>{todo.text}</a></li>);
+}
+
+const TodoList = ({todos, remove}) => {
+  const todoNode = todos.map((todo) => {
+    return (<Todo todo={todo} key={todo.id} remove={remove}/>)
+  });
+  return (<ul>{todoNode}</ul>);
+}
+
+
+export default App;

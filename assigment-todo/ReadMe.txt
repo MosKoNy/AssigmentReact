@@ -1,0 +1,4 @@
+- install nodeJS
+- install npm
+- Start npm with directory Project "assigment-todo"
+- next use "npm start" can work
